@@ -6,8 +6,8 @@ import Add from "./pages/Add.jsx";
 import List from "./pages/List.jsx";
 import Orders from "./pages/Orders.jsx";
 import LogIn from "./components/LogIn.jsx";
-// import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export const currency = "$"
@@ -21,7 +21,7 @@ const App = () => {
   }, [token]);
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       {token === "" ? (
         <LogIn setToken={setToken} />
       ) : (
