@@ -1,8 +1,19 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import styleImport from "vite-plugin-style-import";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  server: {port:5174}
-})
+  plugins: [
+    react(),
+    styleImport({
+      libs: [
+        {
+          libraryName: "react-toastify",
+          esModule: true,
+          resolveStyle: () => "react-toastify/dist/ReactToastify.css",
+        },
+      ],
+    }),
+  ],
+  server: { port: 5174 },
+});
